@@ -43,11 +43,11 @@ class Hero(Character):
     def show_details(self):
         return f"{super().show_details()}\nAbility: {self.get_ability()}\n"
     
-    def use_ability(self,target):
+    def use_ability(self,target, attacker):
         randomizer = round(random.uniform(2,4), 2)
         damage = int(self.get_lvl() * randomizer)
         target.take_damage(damage)
-        print(f"\nYou rolled {randomizer} between 2 and 4")
+        print(f"\nThe {attacker} rolled {randomizer} between 2 and 4")
         print(f"{self.get_name()} used {self.get_ability()} on {target.get_name()} and did {damage} damage!")
     
 class Enemy(Character):
@@ -77,7 +77,7 @@ class Game:
             if choice == "1":
                 self.hero.attack(self.enemy, self.hero.get_name())
             elif choice == "2":
-                self.hero.use_ability(self.enemy)
+                self.hero.use_ability(self.enemy, self.hero.get_name())
             else:
                 print("Choose a valid option!\n")
 
