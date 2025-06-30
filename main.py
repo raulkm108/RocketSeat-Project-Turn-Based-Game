@@ -24,10 +24,10 @@ class Character:
             self.__hp = 0
         return
 
-    def attack(self, target):
+    def attack(self, target, attacker):
         randomizer = round(random.uniform(1,3), 2)
         damage = int(self.__lvl * randomizer)
-        print(f"\nYou rolled {randomizer} between 1 and 3")
+        print(f"\nThe {attacker} rolled {randomizer} between 1 and 3")
         print(f"{self.get_name()} attacked {target.get_name()} and did {damage} damage!")
         #possible otimization: turn the next block in a diferent function caleed "take_damage"
         target.take_damage(damage)
@@ -75,11 +75,13 @@ class Game:
             input("\nPress enter to choose your action... ")
             choice = input("1 - Attack, 2 - Ability: ")
             if choice == "1":
-                self.hero.attack(self.enemy)
+                self.hero.attack(self.enemy, self.hero.get_name())
             elif choice == "2":
                 self.hero.use_ability(self.enemy)
             else:
                 print("Choose a valid option!\n")
+
+            
         
         if self.hero.get_hp() > 0:
             print("\nCongratulations, you won this combat!")
