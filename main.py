@@ -64,7 +64,7 @@ class Enemy(Character):
         return self.__type
     
     def show_details(self):
-        return f"{super().show_details()}\nType: {self.get_type()}"
+        return f"{super().show_details()}\nAbility: {self.get_ability()}\nType: {self.get_type()}"
     
 class Game:
     def __init__(self) -> None:
