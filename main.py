@@ -13,13 +13,16 @@ class Character:
     def get_lvl(self):
         return self.__lvl
     
+    def show_details(self):
+        return f"Hero: {hero.get_name()}\nHp: {hero.get_hp()}\nLvl: {hero.get_lvl()}"
+    
 class Hero(Character):
     def __init__(self, name, hp, lvl, ability):
         super().__init__(name, hp, lvl)
         self.__ability = ability
     
     def get_ability(self):
-        return ability
+        return self.__ability
     
 class Enemy(Character):
     def __init__(self, name, hp, lvl, type):
@@ -28,3 +31,8 @@ class Enemy(Character):
 
     def get_type(self):
         return self.__type
+    
+hero = Hero("Mage", 100, 5, "Fireball")
+print(hero.show_details())
+
+enemy = Enemy("Crab", 30, 2, "Water")
