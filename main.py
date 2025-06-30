@@ -38,9 +38,15 @@ class Enemy(Character):
     def show_details(self):
         return f"{super().show_details()}\nType: {self.get_type()}"
     
-    
-hero = Hero("Mage", 100, 5, "Fireball")
-print(hero.show_details())
+class Game:
+    def __init__(self) -> None:
+        self.hero = Hero("Mage", 100, 5, "Fireball")
+        self.enemy = Enemy("Crab", 30, 2, "Water")
 
-enemy = Enemy("Crab", 30, 2, "Water")
-print(enemy.show_details())
+    def start_combat(self):
+        print("Starting combat!")
+        while self.hero.get_hp() > 0 and self.enemy.get_hp() > 0:
+            print("Current statuses: ")
+            print(f"{self.hero.show_details()}\n{self.enemy.show_details()}")
+            print("Press enter to choose your action")
+            print("")
