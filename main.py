@@ -18,10 +18,10 @@ class Character:
     def show_details(self):
         return f"Name: {self.get_name()}\nHp: {self.get_hp()}\nLvl: {self.get_lvl()}"
     
-    def take_damage(target, damage):
-        target.__hp -= damage
-        if target.__hp < 0:
-            target.__hp = 0
+    def take_damage(self, damage):
+        self.__hp -= damage
+        if self.__hp < 0:
+            self.__hp = 0
         return
 
     def attack(self, target):
