@@ -69,6 +69,11 @@ class Game:
                 self.hero.attack(self.enemy)
             else:
                 print("Choose a valid option!\n")
+        
+        if self.hero.get_hp() > 0:
+            print("\nCongratulations, you won this combat!")
+        else:
+            print("\nYou have been defeated")
 
 game = Game()
 game.start_combat()
