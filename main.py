@@ -52,9 +52,13 @@ class Hero(Character):
     
     
 class Enemy(Character):
-    def __init__(self, name, hp, lvl, type):
+    def __init__(self, name, hp, lvl, ability, type):
         super().__init__(name, hp, lvl)
         self.__type = type
+        self.__ability = ability
+
+    def get_ability(self):
+        return self.__ability
 
     def get_type(self):
         return self.__type
