@@ -69,7 +69,7 @@ class Enemy(Character):
 class Game:
     def __init__(self) -> None:
         self.hero = Hero("Mage", 100, 5, "Fireball")
-        self.enemy = Enemy("Crab", 30, 3, "Water")
+        self.enemy = Enemy("Crab", 30, 3,"Claw Burst", "Water")
 
     def start_combat(self):
         print("\nStarting combat!")
