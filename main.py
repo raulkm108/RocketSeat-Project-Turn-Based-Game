@@ -53,4 +53,4 @@ class Game:
             choice = input("1 - Attack\n2 - Ability")
 
 game = Game()
-game.start_combat
+game.start_combat()
