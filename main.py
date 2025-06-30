@@ -24,6 +24,7 @@ class Character:
         damage = int(self.__lvl * randomizer)
         print(f"\nYou rolled {randomizer} between 1 and 3")
         print(f"{self.get_name()} attacked {target.get_name()} and did {damage} damage!")
+        target.__hp -= damage
         return
     
 class Hero(Character):
