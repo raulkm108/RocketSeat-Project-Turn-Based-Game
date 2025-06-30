@@ -1,3 +1,5 @@
+import random
+
 class Character:
     def __init__(self, name, hp, lvl):
         self.__name = name
@@ -17,8 +19,10 @@ class Character:
         return f"Name: {self.get_name()}\nHp: {self.get_hp()}\nLvl: {self.get_lvl()}"
     
     def attack(self, target):
-        
-        damage = self.__lvl * 
+
+        damage = int(self.__lvl * random.uniform(1, 3))
+        print (f"{self.get_name()} attacked {target.get_name()} and did {damage} damage!")
+        return
     
 class Hero(Character):
     def __init__(self, name, hp, lvl, ability):
