@@ -68,12 +68,13 @@ class Enemy(Character):
     
 class Game:
     def __init__(self) -> None:
-        random_enemie = list(random.choice(enemies))
+        random_enemy = random.choice(enemies)
+        corrected_list = list(random_enemy.values())
         self.hero = Hero("Mage", 100, 5, "Fireball")
-        self.enemy = Enemy(random_enemie)
+        self.enemy = Enemy(*corrected_list)
 
     def start_combat(self):
-        print("\nStarting combat!")
+        print(f"\nStarting combat against {self.enemy.get_name}!")
         while self.hero.get_hp() > 0 and self.enemy.get_hp() > 0:
             print("\nCurrent statuses: ")
             print(f"{self.hero.show_details()}\n{self.enemy.show_details()}")
