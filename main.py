@@ -74,7 +74,7 @@ class Game:
         self.enemy = Enemy(*corrected_list)
 
     def start_combat(self):
-        print(f"\nStarting combat against {self.enemy.get_name}!")
+        print(f"\nStarting combat against {self.enemy.get_name()}!")
         while self.hero.get_hp() > 0 and self.enemy.get_hp() > 0:
             print("\nCurrent statuses: ")
             print(f"{self.hero.show_details()}\n{self.enemy.show_details()}")
