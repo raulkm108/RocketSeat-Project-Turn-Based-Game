@@ -44,13 +44,13 @@ class Game:
         self.enemy = Enemy("Crab", 30, 2, "Water")
 
     def start_combat(self):
-        print("Starting combat!")
+        print("\nStarting combat!")
         while self.hero.get_hp() > 0 and self.enemy.get_hp() > 0:
-            print("Current statuses: ")
+            print("\nCurrent statuses: ")
             print(f"{self.hero.show_details()}\n{self.enemy.show_details()}")
 
-            input("Press enter to choose your action")
-            choice = input("1 - Attack\n2 - Ability")
+            input("\nPress enter to choose your action... ")
+            choice = input("1 - Attack, 2 - Ability: ")
 
 game = Game()
 game.start_combat()
