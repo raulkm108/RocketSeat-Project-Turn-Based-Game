@@ -73,6 +73,8 @@ class Game:
             choice = input("1 - Attack, 2 - Ability: ")
             if choice == "1":
                 self.hero.attack(self.enemy)
+            elif choice == "2":
+                self.hero.use_ability(self.enemy)
             else:
                 print("Choose a valid option!\n")
         
