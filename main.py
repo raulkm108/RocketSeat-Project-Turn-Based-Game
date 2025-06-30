@@ -12,3 +12,7 @@ class Character:
     
     def get_lvl(self):
         return self.__lvl
+    
+class Hero(Character):
+    def __init__(self, name, hp, lvl, ability):
+        super().__init__(name, hp, lvl)
