@@ -35,6 +35,9 @@ class Enemy(Character):
     def get_type(self):
         return self.__type
     
+    def show_details(self):
+        return f"{super().show_details()}\nType: {self.get_type()}"
+    
     
 hero = Hero("Mage", 100, 5, "Fireball")
 print(hero.show_details())
