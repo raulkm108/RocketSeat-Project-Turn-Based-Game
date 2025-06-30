@@ -41,6 +41,12 @@ class Hero(Character):
     def show_details(self):
         return f"{super().show_details()}\nAbility: {self.get_ability()}\n"
     
+    def use_ability(self,target):
+        randomizer = round(random.uniform(2,4), 2)
+        damage = int(self.get_lvl() * randomizer)
+        print(f"\n You rolled {randomizer} between 2 and 4")
+        print(f"{self.get_name()} used {self.get_ability()} on {target.get_name()} and did {damage} damge!")
+    
 class Enemy(Character):
     def __init__(self, name, hp, lvl, type):
         super().__init__(name, hp, lvl)
