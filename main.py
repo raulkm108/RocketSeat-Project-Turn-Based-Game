@@ -1,5 +1,5 @@
 import random
-
+from enemies_list import enemies
 class Character:
     def __init__(self, name, hp, lvl):
         self.__name = name
