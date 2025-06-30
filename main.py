@@ -85,8 +85,12 @@ class Game:
                 self.hero.use_ability(self.enemy, self.hero.get_name())
             else:
                 print("Choose a valid option!\n")
-
-            self.enemy.attack(self.hero, self.enemy.get_name())
+            if self.enemy.get_hp() > 0:
+                random = random.randint(1,2)
+                if random == 1:
+                    self.enemy.attack(self.hero, self.enemy.get_name())
+                if random == 2:
+                    self.enemy.use_ability(self.hero, self.enemy.get_name())
         
         if self.hero.get_hp() > 0:
             print("\nCongratulations, you won this combat!")
