@@ -14,7 +14,7 @@ class Character:
         return self.__lvl
     
     def show_details(self):
-        return f"Hero: {hero.get_name()}\nHp: {hero.get_hp()}\nLvl: {hero.get_lvl()}"
+        return f"Hero: {self.get_name()}\nHp: {self.get_hp()}\nLvl: {self.get_lvl()}"
     
 class Hero(Character):
     def __init__(self, name, hp, lvl, ability):
