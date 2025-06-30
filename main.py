@@ -86,10 +86,10 @@ class Game:
             else:
                 print("Choose a valid option!\n")
             if self.enemy.get_hp() > 0:
-                random = random.randint(1,2)
-                if random == 1:
+                random_number = random.randint(1,2)
+                if random_number == 1:
                     self.enemy.attack(self.hero, self.enemy.get_name())
-                if random == 2:
+                if random_number == 2:
                     self.enemy.use_ability(self.hero, self.enemy.get_name())
         
         if self.hero.get_hp() > 0:
