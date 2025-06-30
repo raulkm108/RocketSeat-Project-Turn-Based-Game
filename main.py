@@ -20,3 +20,8 @@ class Hero(Character):
     
     def get_ability(self):
         return ability
+    
+class Enemy(Character):
+    def __init__(self, name, hp, lvl, type):
+        super().__init__(name, hp, lvl)
+        self.__type = type
