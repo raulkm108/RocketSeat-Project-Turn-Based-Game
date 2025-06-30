@@ -20,9 +20,10 @@ class Character:
     
     def attack(self, target):
 
-        damage = int(self.__lvl * random.uniform(1, 3))
-        print(random.uniform(1,3))
-        print (f"\n{self.get_name()} attacked {target.get_name()} and did {damage} damage!")
+        randomizer = round(random.uniform(1,3), 2)
+        damage = int(self.__lvl * randomizer)
+        print(f"\nYou rolled {randomizer} between 1 and 3")
+        print(f"{self.get_name()} attacked {target.get_name()} and did {damage} damage!")
         return
     
 class Hero(Character):
