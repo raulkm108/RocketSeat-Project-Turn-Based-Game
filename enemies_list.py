@@ -1,3 +1,5 @@
+import random
+
 enemies = [
     {
         "name":"Crab",
@@ -28,3 +30,7 @@ enemies = [
         "type": "Rock"
     }
 ]
+
+chosen_enemie = random.choice(enemies)
+print(chosen_enemie)
+print(list(chosen_enemie.values()))
