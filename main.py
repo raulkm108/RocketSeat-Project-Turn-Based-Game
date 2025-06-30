@@ -25,7 +25,6 @@ class Character:
         return
 
     def attack(self, target):
-
         randomizer = round(random.uniform(1,3), 2)
         damage = int(self.__lvl * randomizer)
         print(f"\nYou rolled {randomizer} between 1 and 3")
@@ -47,6 +46,7 @@ class Hero(Character):
     def use_ability(self,target):
         randomizer = round(random.uniform(2,4), 2)
         damage = int(self.get_lvl() * randomizer)
+        target.take_damage(damage)
         print(f"\nYou rolled {randomizer} between 2 and 4")
         print(f"{self.get_name()} used {self.get_ability()} on {target.get_name()} and did {damage} damage!")
     
