@@ -14,7 +14,7 @@ class Character:
         return self.__lvl
     
     def show_details(self):
-        return f"Name: {self.get_name()}\nHp: {self.get_hp()}\nLvl: {self.get_lvl()}\n"
+        return f"Name: {self.get_name()}\nHp: {self.get_hp()}\nLvl: {self.get_lvl()}"
     
 class Hero(Character):
     def __init__(self, name, hp, lvl, ability):
@@ -23,6 +23,9 @@ class Hero(Character):
     
     def get_ability(self):
         return self.__ability
+    
+    def show_details(self):
+        return f"{super().show_details()}\nAbility: {self.get_ability()}\n"
     
 class Enemy(Character):
     def __init__(self, name, hp, lvl, type):
