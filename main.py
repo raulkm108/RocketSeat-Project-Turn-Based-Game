@@ -16,6 +16,10 @@ class Character:
     def show_details(self):
         return f"Name: {self.get_name()}\nHp: {self.get_hp()}\nLvl: {self.get_lvl()}"
     
+    def attack(self, target):
+        
+        damage = self.__lvl * 
+    
 class Hero(Character):
     def __init__(self, name, hp, lvl, ability):
         super().__init__(name, hp, lvl)
