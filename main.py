@@ -48,5 +48,9 @@ class Game:
         while self.hero.get_hp() > 0 and self.enemy.get_hp() > 0:
             print("Current statuses: ")
             print(f"{self.hero.show_details()}\n{self.enemy.show_details()}")
-            print("Press enter to choose your action")
-            print("")
+
+            input("Press enter to choose your action")
+            choice = input("1 - Attack\n2 - Ability")
+
+game = Game()
+game.start_combat
