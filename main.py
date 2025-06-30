@@ -14,7 +14,7 @@ class Character:
         return self.__lvl
     
     def show_details(self):
-        return f"Name: {self.get_name()}\nHp: {self.get_hp()}\nLvl: {self.get_lvl()}"
+        return f"Name: {self.get_name()}\nHp: {self.get_hp()}\nLvl: {self.get_lvl()}\n"
     
 class Hero(Character):
     def __init__(self, name, hp, lvl, ability):
@@ -37,3 +37,4 @@ hero = Hero("Mage", 100, 5, "Fireball")
 print(hero.show_details())
 
 enemy = Enemy("Crab", 30, 2, "Water")
+print(enemy.show_details())
