@@ -21,7 +21,8 @@ class Character:
     def attack(self, target):
 
         damage = int(self.__lvl * random.uniform(1, 3))
-        print (f"{self.get_name()} attacked {target.get_name()} and did {damage} damage!")
+        print(random.uniform(1,3))
+        print (f"\n{self.get_name()} attacked {target.get_name()} and did {damage} damage!")
         return
     
 class Hero(Character):
@@ -59,6 +60,10 @@ class Game:
 
             input("\nPress enter to choose your action... ")
             choice = input("1 - Attack, 2 - Ability: ")
+            if choice == "1":
+                self.hero.attack(self.enemy)
+            else:
+                print("Choose a valid option!\n")
 
 game = Game()
 game.start_combat()
