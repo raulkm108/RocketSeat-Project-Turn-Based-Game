@@ -31,7 +31,7 @@ class Character:
         print(f"\nYou rolled {randomizer} between 1 and 3")
         print(f"{self.get_name()} attacked {target.get_name()} and did {damage} damage!")
         #possible otimization: turn the next block in a diferent function caleed "take_damage"
-        self.take_damage(target, damage)
+        target.take_damage(damage)
     
 class Hero(Character):
     def __init__(self, name, hp, lvl, ability):
