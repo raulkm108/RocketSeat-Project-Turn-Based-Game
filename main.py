@@ -127,3 +127,6 @@ while True:
         break
     else:
         print("Choose a valid anwser")
+
+# Possible implementations: Every one or two choice correction in case the user answers wrong
+# Possible implementation: Correct the lvl up system
