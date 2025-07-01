@@ -96,6 +96,7 @@ class Game:
                     self.enemy.use_ability(self.hero, self.enemy.get_name())
         
         if self.hero.get_hp() > 0:
+            self.hero.lvlup()
             print("\nCongratulations, you won this combat!")
         else:
             print("\nYou have been defeated")
