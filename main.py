@@ -106,7 +106,7 @@ class Game:
 
 game = Game()
 while True:
-    input("Press enter to walk to the next room")
+    input("Press enter to walk to the next room...")
     random_enemy = random.choice(enemies)
     corrected_list = list(random_enemy.values())
     enemy = Enemy(*corrected_list)
