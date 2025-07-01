@@ -108,7 +108,7 @@ class Game:
 
 game = Game()
 while True:
-    choice = input("Would you like to start a combat (1) or end programm(2) ?")
+    choice = input("Would you like to start a combat (1) or end programm (2)? ")
     if choice == "1":
         game.start_combat()
     elif choice == "2":
