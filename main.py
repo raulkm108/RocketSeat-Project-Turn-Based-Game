@@ -112,7 +112,7 @@ while True:
     print(f"You have encountered a {enemy.get_name()}!")
     choice = input("Would you like to start the combat (1) or flee (2)? ")
     if choice == "1":
-        game.start_combat()
+        game.start_combat(enemy)
     elif choice == "2":
         break
     else:
