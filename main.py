@@ -107,4 +107,9 @@ class Game:
             print("\nYou have been defeated")
 
 game = Game()
-game.start_combat()
+while True:
+    choice = input("Would you like to start a combat (1) or end programm(2) ?")
+    if choice == "1":
+        game.start_combat()
+    if choice == "2":
+        break
