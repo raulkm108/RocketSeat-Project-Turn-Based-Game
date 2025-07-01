@@ -55,6 +55,7 @@ class Hero(Character):
         self.__lvl = self.get_lvl()
         self.__lvl += 1
         print("You leveled up!")
+        return self.__lvl
     
     
 class Enemy(Character):
