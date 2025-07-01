@@ -77,29 +77,26 @@ class Game:
     def __init__(self) -> None:
         self.hero = Hero("Mage", 100, 5, "Fireball")
 
-    def start_combat(self):
-        random_enemy = random.choice(enemies)
-        corrected_list = list(random_enemy.values())
-        self.enemy = Enemy(*corrected_list)
-        print(f"\nStarting combat against {self.enemy.get_name()}!")
-        while self.hero.get_hp() > 0 and self.enemy.get_hp() > 0:
+    def start_combat(self, enemy):
+        print(f"\nStarting combat against {enemy.get_name()}!")
+        while self.hero.get_hp() > 0 and enemy.get_hp() > 0:
             print("\nCurrent statuses: ")
-            print(f"{self.hero.show_details()}\n{self.enemy.show_details()}")
+            print(f"{self.hero.show_details()}\n{enemy.show_details()}")
 
             input("\nPress enter to choose your action... ")
             choice = input("1 - Attack, 2 - Ability: ")
             if choice == "1":
-                self.hero.attack(self.enemy, self.hero.get_name())
+                self.hero.attack(enemy, self.hero.get_name())
             elif choice == "2":
-                self.hero.use_ability(self.enemy, self.hero.get_name())
+                self.hero.use_ability(enemy, self.hero.get_name())
             else:
                 print("Choose a valid option!\n")
-            if self.enemy.get_hp() > 0:
+            if enemy.get_hp() > 0:
                 random_number = random.randint(1,2)
                 if random_number == 1:
-                    self.enemy.attack(self.hero, self.enemy.get_name())
+                    enemy.attack(self.hero, enemy.get_name())
                 if random_number == 2:
-                    self.enemy.use_ability(self.hero, self.enemy.get_name())
+                    enemy.use_ability(self.hero, enemy.get_name())
         
         if self.hero.get_hp() > 0:
             print("\nCongratulations, you won this combat!")
@@ -109,6 +106,9 @@ class Game:
 
 game = Game()
 while True:
+    random_enemy = random.choice(enemies)
+    corrected_list = list(random_enemy.values())
+    enemy = Enemy(*corrected_list)
     choice = input("Would you like to start a combat (1) or end programm (2)? ")
     if choice == "1":
         game.start_combat()
