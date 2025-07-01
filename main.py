@@ -74,7 +74,7 @@ class Enemy(Character):
         return f"{super().show_details()}\nAbility: {self.get_ability()}\nType: {self.get_type()}"
     
 class Game:
-    def __init__(self, win) -> None:
+    def __init__(self, win):
         self.hero = Hero("Mage", 100, 5, "Fireball")
         self.win = win
 
@@ -107,8 +107,8 @@ class Game:
             print("\nYou have been defeated")
             self.win = False
             return self.win
-
-game = Game()
+win = True
+game = Game(win)
 while True:
     input("Press enter to walk to the next room...")
     random_enemy = random.choice(enemies)
