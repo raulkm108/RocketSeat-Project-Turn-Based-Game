@@ -79,11 +79,11 @@ class Game:
         self.win = win
 
     def start_combat(self, enemy):
-        print(f"You have encountered a {enemy.get_name()}!")
+        print(f"\nStarting combat against {enemy.get_name()}!")
         while self.hero.get_hp() > 0 and enemy.get_hp() > 0:
             print("\nCurrent statuses: ")
             print(f"{self.hero.show_details()}\n{enemy.show_details()}")
-            
+
             input("\nPress enter to choose your action... ")
             choice = input("1 - Attack, 2 - Ability: ")
             if choice == "1":
@@ -115,9 +115,9 @@ while True:
     random_enemy = random.choice(enemies)
     corrected_list = list(random_enemy.values())
     enemy = Enemy(*corrected_list)
+    print(f"You have encountered a {enemy.get_name()}!")
     choice = input("Would you like to start the combat (1) or flee (2)? ")
     if choice == "1":
-        print(f"\nStarting combat against {enemy.get_name()}!")
         game.start_combat(enemy)
         if game.win:
             pass
