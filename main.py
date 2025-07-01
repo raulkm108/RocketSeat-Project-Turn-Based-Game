@@ -74,8 +74,9 @@ class Enemy(Character):
         return f"{super().show_details()}\nAbility: {self.get_ability()}\nType: {self.get_type()}"
     
 class Game:
-    def __init__(self) -> None:
+    def __init__(self, win) -> None:
         self.hero = Hero("Mage", 100, 5, "Fireball")
+        self.win = win
 
     def start_combat(self, enemy):
         while self.hero.get_hp() > 0 and enemy.get_hp() > 0:
@@ -100,10 +101,12 @@ class Game:
         if self.hero.get_hp() > 0:
             print("\nCongratulations, you won this combat!")
             self.hero.lvlup()
-            return True
+            self.win = True
+            return self.win
         else:
             print("\nYou have been defeated")
-            return False
+            self.win = False
+            return self.win
 
 game = Game()
 while True:
@@ -116,7 +119,7 @@ while True:
     if choice == "1":
         print(f"\nStarting combat against {enemy.get_name()}!")
         game.start_combat(enemy)
-        if game.start_combat(enemy):
+        if game.win:
             pass
         else:
             break
