@@ -116,7 +116,7 @@ while True:
     choice = input("Would you like to start the combat (1) or flee (2)? ")
     if choice == "1":
         game.start_combat(enemy)
-        if game.start_combat():
+        if game.start_combat(enemy):
             pass
         else:
             break
