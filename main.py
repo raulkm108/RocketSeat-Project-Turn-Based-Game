@@ -110,7 +110,7 @@ while True:
     corrected_list = list(random_enemy.values())
     enemy = Enemy(*corrected_list)
     print(f"You have encountered a {enemy.get_name()}!")
-    choice = input("Would you like to start a combat (1) or flee (2)? ")
+    choice = input("Would you like to start the combat (1) or flee (2)? ")
     if choice == "1":
         game.start_combat()
     elif choice == "2":
