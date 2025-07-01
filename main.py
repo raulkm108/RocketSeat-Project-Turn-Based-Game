@@ -101,8 +101,10 @@ class Game:
         if self.hero.get_hp() > 0:
             print("\nCongratulations, you won this combat!")
             self.hero.lvlup()
+            return True
         else:
             print("\nYou have been defeated")
+            return False
 
 game = Game()
 while True:
@@ -114,6 +116,10 @@ while True:
     choice = input("Would you like to start the combat (1) or flee (2)? ")
     if choice == "1":
         game.start_combat(enemy)
+        if game.start_combat():
+            pass
+        else:
+            break
     elif choice == "2":
         break
     else:
