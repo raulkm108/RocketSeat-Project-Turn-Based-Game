@@ -52,7 +52,9 @@ class Hero(Character):
         return f"{super().show_details()}\nAbility: {self.get_ability()}\n"
     
     def lvlup(self):
+        self.__lvl = self.get_lvl()
         self.__lvl += 1
+        print("You leveled up!")
     
     
 class Enemy(Character):
