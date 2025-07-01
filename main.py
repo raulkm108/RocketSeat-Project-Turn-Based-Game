@@ -51,6 +51,9 @@ class Hero(Character):
     def show_details(self):
         return f"{super().show_details()}\nAbility: {self.get_ability()}\n"
     
+    def lvlup(self):
+        self.__lvl += 1
+    
     
 class Enemy(Character):
     def __init__(self, name, hp, lvl, ability, type):
