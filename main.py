@@ -111,5 +111,7 @@ while True:
     choice = input("Would you like to start a combat (1) or end programm(2) ?")
     if choice == "1":
         game.start_combat()
-    if choice == "2":
+    elif choice == "2":
         break
+    else:
+        print("Choose a valid anwser")
