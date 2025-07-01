@@ -39,6 +39,11 @@ class Character:
         target.take_damage(damage)
         print(f"\nThe {attacker} rolled {randomizer} between 2 and 4")
         print(f"{self.get_name()} used {self.get_ability()} on {target.get_name()} and did {damage} damage!")
+
+    def lvlup(self):
+        self.__lvl += 1
+        print("You leveled up!")
+        return self.__lvl
     
 class Hero(Character):
     def __init__(self, name, hp, lvl, ability):
@@ -50,13 +55,6 @@ class Hero(Character):
     
     def show_details(self):
         return f"{super().show_details()}\nAbility: {self.get_ability()}\n"
-    
-    def lvlup(self):
-        self.__lvl = self.get_lvl()
-        self.__lvl += 1
-        print("You leveled up!")
-        return self.__lvl
-    
     
 class Enemy(Character):
     def __init__(self, name, hp, lvl, ability, type):
