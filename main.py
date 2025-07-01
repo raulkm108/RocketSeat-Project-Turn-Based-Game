@@ -78,7 +78,6 @@ class Game:
         self.hero = Hero("Mage", 100, 5, "Fireball")
 
     def start_combat(self, enemy):
-        print(f"\nStarting combat against {enemy.get_name()}!")
         while self.hero.get_hp() > 0 and enemy.get_hp() > 0:
             print("\nCurrent statuses: ")
             print(f"{self.hero.show_details()}\n{enemy.show_details()}")
@@ -115,6 +114,7 @@ while True:
     print(f"You have encountered a {enemy.get_name()}!")
     choice = input("Would you like to start the combat (1) or flee (2)? ")
     if choice == "1":
+        print(f"\nStarting combat against {enemy.get_name()}!")
         game.start_combat(enemy)
         if game.start_combat(enemy):
             pass
